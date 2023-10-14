@@ -1,11 +1,18 @@
-/* eslint-disable */
-import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+let quien = ["Un perro", "Un gato", "Un pajaro"];
+let accion = ["se comio", "se robo", "se llevo"];
+let que = ["mi almuerzo", "mi desayuno", "mi cena"];
+let cuando = ["en el trabajo", "en el parque", "en el cerro"];
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+function generarExcusa() {
+    let randomNumber = Math.floor(Math.random() * 3);
+    let excusaGenerada = `${quien[randomNumber]} ${accion[randomNumber]} ${que[randomNumber]} ${cuando[randomNumber]}`;
+  
+    let elementoExcusa = document.getElementById("excusa");
+    elementoExcusa.innerHTML = excusaGenerada;
+  }
+  
+  window.onload = function() {
+    generarExcusa();
+  };
